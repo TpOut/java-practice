@@ -6,15 +6,9 @@ https://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/functions.html
 
 - 接口函数表
 
-    所有的函数都可以通过`JNIEnv` 参数被访问，以偏移量区分。`JNIEnv` 是一个指向存储了所有JNI 函数指针的指针。VM 初始化这张表，会有几个NULL 的指针用于未来的拓展。  
-
 - 版本信息
 
-    获取版本，常量
-
 - 类操作
-
-    
 
 - 异常
 

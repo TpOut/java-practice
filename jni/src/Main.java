@@ -1,6 +1,7 @@
 public class Main {
 
     public static void main(String[] args){
-        System.out.println(new JniHelloWorld().displayHelloWorld());
+        String s = new JniHelloWorld().displayHelloWorld();
+        System.out.println(s);
     }
 }

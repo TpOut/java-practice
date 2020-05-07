@@ -1,6 +1,6 @@
 
 
-首先编写java 的类([如jni-usage](../src/JniHelloWorld.java))，其中包含`native` 方法  
+首先编写java 的类([基本使用](../src/JniHelloWorld.java))，其中包含`native` 方法  
 
 然后编译出对应的class 文件
 
@@ -44,7 +44,25 @@ gcc -dynamiclib -o libhello.jnilib JniHelloWorld.o
 
 然后把jnilib 放入`java.library.path` 中的目录，如`/Library/Java/Extensions`  
 
-此时便可以运行了。但是奇怪的是
+此时便可以运行了。
 
-先用printf 先打印的，却在控制台里较后输出。
+
+
+<font color=red>问题</font>
+
+代码先printf 打印，在java 调用system 打印
+
+但是控制台却是先输出system，再输出printf  
+
+而且第一次执行，贼慢
+
+
+
+解决：
+
+https://stackoverflow.com/questions/23085044/jni-system-out-and-printf-behaviour
+
+主要是flush 一下  
+
+
 

@@ -1,9 +1,3 @@
-function - 函数
-
-method - 方法
-
-interface - 接口
-
 
 
 主要是一些设计缺陷，大部分都是关于native 方法的。
@@ -18,7 +12,7 @@ JNI 接口指针只在当前线程有效，即不能在线程间传递接口指�
 
 native 方法接收 JNI 接口指针作为一个参数，vm 保证同一个线程的多次调用都会传递同一个接口指针。即你可以在不同线程调用native 方法，只是可能会收到一个不一样的JNI 接口指针  
 
-加载库通过System.load("pkg_cls") 进行加载，linux 加载的是`libpkg_cls.so`，win32 则是`pkg_cls.dll`。一个动态库通过一个class loader 加载。  
+加载库通过System.load("pkg_cls") 进行加载，linux 加载的是`libpkg_cls.so`，win32 则是`pkg_cls.dll`,（mac经测试是`libpkg_cls.jnilib`）。一个动态库通过一个class loader 加载。  
 
 VM 加载native 库可能是通过 静态链接（statically linked），具体要看实现。只有一个被VM 捆绑的输出一个`JNI_OnLoad_L` 方法的库 L 会被静态链接。如果同时还有`JNI_OnLoad` 方法，后者会被忽略。如果一个库是静态链接的，在第一次调用加载时，`JNI_OnLoad_L` 的参数正常调用，但是返回值是`JNI_OnLoad` 定义的。静态库会屏蔽同名动态库。如果动态链接的库被垃圾收集了，vm会调用 `JNI_OnUnLoad_L` 方法，类似的忽略同时定义的`JNI_OnUnLoad`。开发者可以调用`RegisterNatives()` 方法class 关联的vative 方法，在静态链接函数时有用。  
 

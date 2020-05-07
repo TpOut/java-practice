@@ -1,40 +1,32 @@
 > https://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/jniTOC.html
 >
-> [原文翻译](./translate/translate-index.md)
+> function - 函数
+>
+> method - 方法
+>
+> interface - 接口
 
 
 
-JNI 最重要的是没有依赖底层jvm 的实现，所以jvm 可以单独支持JNI（独立于其他部分）
+JNI 是一个native 编程接口，允许jvm 中的java 代码和其他语言（c/c++, 汇编）编写的应用/库 进行交互  
+
+它最大的好处是不会束缚底层jvm 的实现。让jvm 供应者（vendors）在添加jni 支持时，不影响其他模块。  
+
+开发者只需要编写一次native 应用/库，就可以在所有支持JNI 的vm 上运行。
 
 
 
-invocation API
+[基本用法](jni-usage-basic.md)
 
 
 
-#### 历史实现
+[介绍](./translate/introduction.md)
 
-- jdk1.0 实现时，native 访问java 对象，是转化成一个c 结构体，但是不同jvm 存储对象的方式是不确定的。且依赖于一个保守（conservative）的垃圾收集器，比如`unhand` 需要浏览native 栈。
+[设计概览](./translate/design-overview.md)
 
-    > `unhand` macro 的函数，可以看下http://hepunx.rl.ac.uk/~adye/javatutorial/native/implementing/objects.html 第一节
-    >
-    > 大概就是说通过这个宏函数，可以把java 对象对应解析成c 的结构体
+[类型映射](./translate/JNI-types-and-data-structures.md)
 
-- Java runtime interface，理想化兼容设计，伴随着很多issues
+[相关函数](./translate/JNI-functions.md)
 
-- Raw native interface and Java/COM interface，通过两层接口处理
-
-
-
-#### 目标实现
-
-必须是二进制兼容，高效的，功能性齐全的
-
-
-
-
-
-[基本用法](jni-usage.md)
-
-
+[invocation](./translate/the-invocation-API.md)
 

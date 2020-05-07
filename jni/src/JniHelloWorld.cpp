@@ -8,8 +8,10 @@ extern "C" {
 #endif
 
 JNIEXPORT jstring JNICALL Java_JniHelloWorld_displayHelloWorld(JNIEnv *env, jobject obj) {
+    jstring js = (*env).NewStringUTF("hello, first met of c & j");
     printf("hello from jni");
-    return (*env).NewStringUTF("hello, first met of c & j");
+    fflush(stdout);
+    return js;
 }
 #ifdef __cplusplus
 }
