@@ -18,7 +18,7 @@ JNI 是一个native 编程接口，允许jvm 中的java 代码和其他语言（
 
 [基本用法](jni-usage-basic.md)
 
-
+由于基本用法的方式比较麻烦，java 和 C 代码分离编写。所以我们在Android 项目中进行相关函数的基本练习。  
 
 [介绍](./translate/introduction.md)
 
@@ -29,4 +29,3 @@ JNI 是一个native 编程接口，允许jvm 中的java 代码和其他语言（
 [相关函数](./translate/JNI-functions.md)
 
 [invocation](./translate/the-invocation-API.md)
-

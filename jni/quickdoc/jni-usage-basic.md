@@ -48,13 +48,11 @@ gcc -dynamiclib -o libhello.jnilib JniHelloWorld.o
 
 
 
-<font color=red>问题</font>
+**Q1**
 
 代码先printf 打印，在java 调用system 打印
 
 但是控制台却是先输出system，再输出printf  
-
-而且第一次执行，贼慢
 
 
 
@@ -66,3 +64,6 @@ https://stackoverflow.com/questions/23085044/jni-system-out-and-printf-behaviour
 
 
 
+**Q2**
+
+第一次执行输出贼慢
