@@ -1,10 +1,4 @@
-以英文、下划线、`$`开头、数字组成，但是数字不能作为开头
 
-但不要用字符`$` 命名标识符。 习慣上， 字符 $ 只用在机器自动产生的源代码中。
-
-![&#x6355;&#x83B7;.PNG](https://upload-images.jianshu.io/upload_images/1936727-dbcc0b31066a52a3.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) 
-
-为了提高可读性， Java 允许在數值直接量的两个数字间使用下划线。 例如， 下面的直接量是正确的：基本程序设计 43 long l = 232\_44\_19; long l = 224\_4545\_4519L;
 
 **文档**
 
