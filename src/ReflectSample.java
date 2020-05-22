@@ -1,8 +1,10 @@
-```text
+import java.lang.reflect.*;
+import java.util.ArrayList;
+
 /**
  * just for quick practice
  */
-public class Test {
+public class ReflectSample {
 
     public static void main(String[] args) {
         ReflectClass reflectClass = new ReflectClass();
@@ -12,7 +14,7 @@ public class Test {
         System.out.println(cl.getName());
 
         //throw exception if use "Test.ReflectClass", that is for package path
-        String className = "Test$ReflectClass";
+        String className = "ReflectSample$ReflectClass";
         try {
             Class cl1 = Class.forName(className);
             System.out.println(cl1.getName());
@@ -27,7 +29,6 @@ public class Test {
         System.out.println(cl2.getName());
 
         //create instance
-        Class cl;
         try {
             cl.newInstance();
         } catch (InstantiationException | IllegalAccessException e) {
@@ -139,7 +140,3 @@ public class Test {
     }
 
 }
-```
-
-这句话其实不是很理解，也许以后做到java的时候会理解吧。 ![201848-163013.jpg](https://upload-images.jianshu.io/upload_images/1936727-ecd50ed63b24ea68.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
